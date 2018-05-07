@@ -26,4 +26,7 @@ dependencies {
 
     //For Circular Image View
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //For Encryption and Decryption
+    compile 'com.scottyab:aescrypt:0.0.1'
 }
