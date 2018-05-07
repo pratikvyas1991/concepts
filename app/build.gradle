@@ -24,6 +24,9 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
 
+    //Support Design
+    implementation 'com.android.support:design:26.1.0'
+
     //For Circular Image View
     implementation 'de.hdodenhof:circleimageview:2.2.0'
 
@@ -33,6 +36,17 @@ dependencies {
     // RxJava for Reative Programming
     implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
 
-    // RxAndroid for Reative Programming Android Edition 
+    // RxAndroid for Reative Programming Android Edition
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //For Maps
+
+    compile 'com.google.android.gms:play-services-maps:11.4.0'
+    compile 'com.google.android.gms:play-services-location:11.4.0'
+    compile 'com.google.android.gms:play-services-base:11.4.0'
+    compile 'com.google.android.gms:play-services:11.4.0'
+    compile 'org.apache.httpcomponents:httpcore:4.2.4'
+    compile 'com.google.maps.android:android-maps-utils:0.5+'
+    compile 'com.scottyab:aescrypt:0.0.1'
+
 }

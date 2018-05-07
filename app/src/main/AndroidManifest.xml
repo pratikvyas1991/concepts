@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.concepts.myconcepts">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".reactiveprogramming.CompositeDisposable">
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="true" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_api_key" />
+
+
+        <activity android:name=".mapslocations.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,6 +33,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".mapslocations.MapsACtivityHome"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        <activity android:name=".reactiveprogramming.CompositeDisposable"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".customviews.CircularImageView"/>
         <activity android:name=".encryption.EncrypttionActivity"/>
