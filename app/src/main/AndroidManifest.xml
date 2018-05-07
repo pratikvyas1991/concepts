@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".validations.ValidationCheckerActivity">
+        <activity android:name=".reactiveprogramming.CompositeDisposable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,6 +21,10 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".customviews.CircularImageView"/>
         <activity android:name=".encryption.EncrypttionActivity"/>
+        <activity android:name=".validations.ValidationCheckerActivity"/>
+        <activity android:name=".reactiveprogramming.SampleBasicIntro"/>
+        <activity android:name=".reactiveprogramming.SampleDisposable"/>
+        <activity android:name=".reactiveprogramming.SampleOperator"/>
     </application>
 
 </manifest>
