@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".encryption.EncrypttionActivity">
+        <activity android:name=".validations.ValidationCheckerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +20,7 @@
 
         <activity android:name=".MainActivity"/>
         <activity android:name=".customviews.CircularImageView"/>
+        <activity android:name=".encryption.EncrypttionActivity"/>
     </application>
 
 </manifest>
