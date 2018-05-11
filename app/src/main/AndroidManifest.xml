@@ -3,10 +3,12 @@
     package="com.concepts.myconcepts">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -24,14 +26,19 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_api_key" />
 
+        <activity android:name=".batch.HomeACtivity">
 
-        <activity android:name=".usecases.usercrud.UserSplash">
-            <intent-filter>
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".retrofit.RetroSplash"/>
+
+        <activity android:name=".retrofit.RetrofitActivity"/>
+        <activity android:name=".retrofit.StudentActivity"/>
 
         <activity android:name=".usecases.usercrud.UserRegistration"/>
         <activity android:name=".usecases.usercrud.UserLogin"/>
@@ -48,6 +55,8 @@
         <activity android:name=".reactiveprogramming.SampleBasicIntro"/>
         <activity android:name=".reactiveprogramming.SampleDisposable"/>
         <activity android:name=".reactiveprogramming.SampleOperator"/>
+
+        <activity android:name=".usecases.usercrud.UserSplash"/>
     </application>
 
 </manifest>

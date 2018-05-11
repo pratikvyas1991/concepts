@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.concepts.myconcepts.R;
 import com.concepts.myconcepts.databaseutils.UserDatabaseHandler;
+import com.concepts.myconcepts.emailutils.SendMail;
 import com.concepts.myconcepts.validations.ValidationUtils;
 import com.scottyab.aescrypt.AESCrypt;
 
@@ -64,7 +65,7 @@ public class UserRegistration extends Activity {
                 email = s.toString();
                 if(validationUtils.isValidEmail(email)){
                     if(userDatabaseHandler.checkEmailExist(email.toString())){
-                        etEmail.setText("Email Already Exist");
+                        etEmail.setError("Email Already Exist");
                         etEmail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
                     }else {
                         etEmail.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
@@ -78,7 +79,8 @@ public class UserRegistration extends Activity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkValidations();
+                sendTo(etEmail.getText().toString());
+//                checkValidations();
             }
         });
 
@@ -128,7 +130,7 @@ public class UserRegistration extends Activity {
                 encryptedMsg = AESCrypt.encrypt(encPassCode, password.toString());
                 int userID = userDatabaseHandler.countAllRows("users")+1;
                 userDatabaseHandler.addUsers(String.valueOf(userID),email,name,encryptedMsg);
-
+//                sendTo(email);
                 Toast.makeText(UserRegistration.this," User Added Sucessfully",Toast.LENGTH_SHORT).show();
                 Log.v(TAGUSER,"ID: "+userID+" Name : "+name+" Email : "+email+" Pass : "+encryptedMsg);
                 Intent intent =new Intent(UserRegistration.this,UserSplash.class);
@@ -143,5 +145,10 @@ public class UserRegistration extends Activity {
         }else {
             Toast.makeText(UserRegistration.this," Failure!!",Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void sendTo(String email) {
+        SendMail mail =new SendMail(UserRegistration.this,email,"Test Email ");
+        mail.execute("");
     }
 }

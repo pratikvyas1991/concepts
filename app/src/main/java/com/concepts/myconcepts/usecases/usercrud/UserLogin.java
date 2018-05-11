@@ -108,6 +108,8 @@ public class UserLogin extends Activity {
         if(decryptMsg.equalsIgnoreCase(etPassword.getText().toString())){
             isAllowed = true;
         }else {
+            etPassword.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+            etPassword.setError("Invalid Password");
             isAllowed = false;
         }
 
