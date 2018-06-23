@@ -2,6 +2,7 @@ package com.concepts.myconcepts.retrofit.utils;
 
 import com.concepts.myconcepts.retrofit.model.DestinationList;
 import com.concepts.myconcepts.retrofit.model.StudentData;
+import com.concepts.myconcepts.retrofit.model.UserList;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -36,4 +37,9 @@ public interface ApiInterface {
     @Streaming
     @GET
     Call<ResponseBody> downloadFileByUrl(@Url String fileUrl);
+
+    @FormUrlEncoded
+    @POST("index.php")
+    Call<UserList> getAllUsers(@Field("reqObject") String taskData);
+
 }

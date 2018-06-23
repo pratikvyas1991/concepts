@@ -26,7 +26,7 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_api_key" />
 
-        <activity android:name=".batch.HomeACtivity">
+        <activity android:name=".optimization.OptimizedRecyclerAdapter">
 
         <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,15 +35,24 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".optimization.OptimizeHome"/>
+
+        <activity android:name=".mapslocations.Splash"/>
+        <activity android:name=".brightness.BrightNessSplash"/>
+
         <activity android:name=".retrofit.RetroSplash"/>
+
+        <service android:name=".service.MySimpleService"/>
+
+        <activity android:name=".batch.HomeACtivity"/>
+
+        <activity android:name=".service.MyServiceActivity"/>
 
         <activity android:name=".retrofit.RetrofitActivity"/>
         <activity android:name=".retrofit.StudentActivity"/>
 
         <activity android:name=".usecases.usercrud.UserRegistration"/>
         <activity android:name=".usecases.usercrud.UserLogin"/>
-
-        <activity android:name=".mapslocations.Splash"/>
 
         <activity android:name=".mapslocations.MapsACtivityHome"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>

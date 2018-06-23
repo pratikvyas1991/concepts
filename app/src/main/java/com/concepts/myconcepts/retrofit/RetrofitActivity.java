@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.concepts.myconcepts.R;
 import com.concepts.myconcepts.retrofit.model.DestinationDetails;
 import com.concepts.myconcepts.retrofit.model.DestinationList;
+import com.concepts.myconcepts.retrofit.model.UserList;
 import com.concepts.myconcepts.retrofit.utils.ApiClient;
 import com.concepts.myconcepts.retrofit.utils.ApiInterface;
 import com.concepts.myconcepts.retrofit.utils.DownloadUtils;
@@ -59,10 +60,29 @@ public class RetrofitActivity extends Activity {
         rvDestinations.setLayoutManager(linearLayoutManager);
         destinationAdapter = new DestinationAdapter();
         apiService = ApiClient.getClient().create(ApiInterface.class);
-        String obj = getReqObject().toString();
-        Log.v(TAGRETROFIT, " Obj : " + obj);
-        getDestinationsData(obj);
 
+
+//        String obj = getReqObject().toString();
+//        Log.v(TAGRETROFIT, " Obj : " + obj);
+//        getDestinationsData(obj);
+
+
+        String obj = getReqObjectUser().toString();
+        Log.v(TAGRETROFIT, " Obj : " + obj);
+        getUsers(obj);
+
+    }
+
+    public JSONObject getReqObjectUser() {
+        JSONObject reqObj = new JSONObject();
+        try {
+            JSONObject taskData = new JSONObject();
+            reqObj.put("task", "getAllUsers");
+            reqObj.put("taskData", taskData);
+        } catch (Exception je) {
+            je.printStackTrace();
+        }
+        return reqObj;
     }
 
     public JSONObject getReqObject() {
@@ -103,6 +123,25 @@ public class RetrofitActivity extends Activity {
             @Override
             public void onFailure(Call<DestinationList> call, Throwable t) {
                 Log.v(TAGRETROFIT, " Error " + t.toString());
+            }
+        });
+    }
+
+    public void getUsers(String taskData){
+        Call<UserList> call = apiService.getAllUsers(taskData);
+        call.enqueue(new Callback<UserList>() {
+            @Override
+            public void onResponse(Call<UserList> call, Response<UserList> response) {
+                if(response!=null){
+                    if(response.isSuccessful()){
+                        Log.v(TAGRETROFIT," Resp "+response.toString());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserList> call, Throwable t) {
+                Log.v(TAGRETROFIT," Error "+t.toString());
             }
         });
     }
