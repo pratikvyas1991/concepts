@@ -20,7 +20,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.concepts.myconcepts.R;
-import com.google.gson.JsonArray;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -70,6 +69,7 @@ public class OptimizedRecyclerAdapter extends Activity {
             holder.mTVTitle.setText(moviePojo.getName());
             Glide.with(OptimizedRecyclerAdapter.this)
                     .load(moviePojo.getSmall())
+                    .placeholder(R.mipmap.ic_launcher_round)
                     .into(holder.mIVThumb);
         }
 

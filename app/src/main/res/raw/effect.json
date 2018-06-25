@@ -1,0 +1,213 @@
+{
+  "data": [
+    {
+      "studentId": 4,
+      "studentName": "Aadya Wadhwa",
+      "className": "B.Com",
+      "sectionName": "B.Com Semester - I",
+      "timeTable": {
+        "1": {
+          "dayName": "Sunday",
+          "data": [
+
+          ]
+        },
+        "2": {
+          "dayName": "Monday",
+          "data": [
+
+          ],
+          "sub": [
+            {
+              "id": 128,
+              "sectionId": 4,
+              "subjectId": "B.Com State",
+              "start": "07:00",
+              "end": "09:00"
+            },
+            {
+              "id": 129,
+              "sectionId": 4,
+              "subjectId": "B.Com Account",
+              "start": "09:00",
+              "end": "10:00"
+            },
+            {
+              "id": 131,
+              "sectionId": 4,
+              "subjectId": "B.Com Mathematics",
+              "start": "10:00",
+              "end": "11:00"
+            },
+            {
+              "id": 132,
+              "sectionId": 4,
+              "subjectId": "B.Com English",
+              "start": "11:00",
+              "end": "12:00"
+            }
+          ]
+        },
+        "3": {
+          "dayName": "Tuesday",
+          "data": [
+
+          ],
+          "sub": [
+            {
+              "id": 136,
+              "sectionId": 4,
+              "subjectId": "B.Com Account",
+              "start": "07:00",
+              "end": "09:00"
+            },
+            {
+              "id": 137,
+              "sectionId": 4,
+              "subjectId": "B.Com State",
+              "start": "09:00",
+              "end": "10:00"
+            },
+            {
+              "id": 138,
+              "sectionId": 4,
+              "subjectId": "B.Com Mathematics",
+              "start": "10:00",
+              "end": "11:00"
+            },
+            {
+              "id": 133,
+              "sectionId": 4,
+              "subjectId": "B.Com English",
+              "start": "11:00",
+              "end": "12:00"
+            }
+          ]
+        },
+        "4": {
+          "dayName": "Wednesday",
+          "data": [
+
+          ],
+          "sub": [
+            {
+              "id": 139,
+              "sectionId": 4,
+              "subjectId": "B.Com State",
+              "start": "07:00",
+              "end": "09:00"
+            },
+            {
+              "id": 140,
+              "sectionId": 4,
+              "subjectId": "B.Com Account",
+              "start": "09:00",
+              "end": "10:00"
+            },
+            {
+              "id": 141,
+              "sectionId": 4,
+              "subjectId": "B.Com Mathematics",
+              "start": "10:00",
+              "end": "11:00"
+            },
+            {
+              "id": 134,
+              "sectionId": 4,
+              "subjectId": "B.Com English",
+              "start": "11:00",
+              "end": "12:00"
+            }
+          ]
+        },
+        "5": {
+          "dayName": "Thursday",
+          "data": [
+
+          ],
+          "sub": [
+            {
+              "id": 142,
+              "sectionId": 4,
+              "subjectId": "B.Com Account",
+              "start": "07:00",
+              "end": "09:00"
+            },
+            {
+              "id": 143,
+              "sectionId": 4,
+              "subjectId": "B.Com State",
+              "start": "09:00",
+              "end": "10:00"
+            },
+            {
+              "id": 144,
+              "sectionId": 4,
+              "subjectId": "B.Com Mathematics",
+              "start": "10:00",
+              "end": "11:00"
+            },
+            {
+              "id": 135,
+              "sectionId": 4,
+              "subjectId": "B.Com English",
+              "start": "11:00",
+              "end": "12:00"
+            }
+          ]
+        },
+        "6": {
+          "dayName": "Friday",
+          "data": [
+
+          ],
+          "sub": [
+            {
+              "id": 130,
+              "sectionId": 4,
+              "subjectId": "B.Com English",
+              "start": "07:00",
+              "end": "08:00"
+            },
+            {
+              "id": 145,
+              "sectionId": 4,
+              "subjectId": "B.Com State",
+              "start": "08:00",
+              "end": "10:00"
+            },
+            {
+              "id": 146,
+              "sectionId": 4,
+              "subjectId": "B.Com Account",
+              "start": "10:00",
+              "end": "11:00"
+            },
+            {
+              "id": 147,
+              "sectionId": 4,
+              "subjectId": "B.Com Mathematics",
+              "start": "11:00",
+              "end": "12:00"
+            },
+            {
+              "id": 175,
+              "sectionId": 4,
+              "subjectId": "B.Com State",
+              "start": "18:00",
+              "end": "19:00"
+            }
+          ]
+        },
+        "7": {
+          "dayName": "Saturday",
+          "data": [
+
+          ]
+        }
+      }
+    }
+  ],
+  "message": "Data listed succesfully",
+  "status_code": 200
+}
