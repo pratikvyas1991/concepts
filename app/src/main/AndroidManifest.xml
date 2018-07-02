@@ -26,7 +26,7 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_api_key" />
 
-        <activity android:name=".optimization.TempJsonParsing">
+        <activity android:name=".ds.TestDs">
 
         <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,6 +34,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".databaseutils.DatabaseOptActivity"/>
+
+        <activity android:name=".optimization.TempJsonParsing"/>
 
         <activity android:name=".optimization.OptimizedRecyclerAdapter"/>
 
