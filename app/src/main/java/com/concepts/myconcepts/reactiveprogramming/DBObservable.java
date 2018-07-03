@@ -9,11 +9,13 @@ import android.widget.Button;
 
 import com.concepts.myconcepts.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -55,6 +57,20 @@ public class DBObservable extends Activity {
 
 
     private void startRx2(){
+//        .filter(new Predicate<List<Footballer>>() {
+//            @Override
+//            public boolean test(List<Footballer> footballers) throws Exception {
+//                List<Footballer> list =new ArrayList<>();
+//                for(Footballer row : footballers){
+//                    if(row.getName().contains("M")){
+//                        return true;
+//                    }else {
+//                        return false;
+//                    }
+//                }
+//                return false;
+//            }
+//        })
         Log.v(TAGSINGLE," startRxOriginal Called ");
         try {
             rxDbHelper.getRxFootballer()

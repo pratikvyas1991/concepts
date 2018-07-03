@@ -45,7 +45,7 @@ public class SampleOperator extends Activity {
                 .filter(new Predicate<String>() {
                     @Override
                     public boolean test(String s) throws Exception {
-                        return s.toLowerCase().startsWith("d");
+                        return s.toLowerCase().startsWith("a");
                     }
                 })
                 .subscribeWith(animalObserver);
