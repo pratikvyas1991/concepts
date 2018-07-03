@@ -34,11 +34,9 @@ public class CompositeDisposable extends Activity {
             public void onNext(String s) {
                 Log.v(TAG," onNext : ");
             }
-
             @Override
             public void onError(Throwable e) {
             }
-
             @Override
             public void onComplete() {
             }

@@ -17,23 +17,23 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Created by tasol on 28/4/18.
  * This is the basic demo for RXJava
- *
+ * <p>
  * Observable : The entity that emits the data
- *
- * Observer :  The entity that recivies the data emitted by the observer
- *
+ * <p>
+ * Observer :  The entity that receives the data emitted by the observer
+ * <p>
  * Note : There can be multiple observer that can be assigned to single observer
- *
+ * <p>
  * Subscription : The bonding between observer and obsevable is called the subscription
- *
+ * <p>
  * Operator/Transformation : Operators modifies the data emitted by observable before received by observer
- *
+ * <p>
  * Schedulers :   Schedulers decides the thread where the observable emits the data and also the thread on which the observer recieves the data i.e background thread ,main thread etc
- *
  */
 
 public class SampleBasicIntro extends Activity {
     private static final String TAG = "@#$@#$SampleActivity";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,15 +41,12 @@ public class SampleBasicIntro extends Activity {
 
 
         //Observer
-
-        Observer<String> animalObserver  = getAnimalObserver();
+        Observer<String> animalObserver = getAnimalObserver();
 
         //Observable
-
         Observable<String> animalObservable = getAnimalObservable();
 
         //Observer subscribing to observable
-
         animalObservable
                 .observeOn(Schedulers.io())
                 .subscribeOn(AndroidSchedulers.mainThread())
@@ -59,7 +56,7 @@ public class SampleBasicIntro extends Activity {
     }
 
     private Observable<String> getAnimalObservable() {
-        return Observable.just("Tiger","Cow","Horse");
+        return Observable.just("Tiger", "Cow", "Horse");
     }
 
     private Observer<String> getAnimalObserver() {
@@ -67,22 +64,22 @@ public class SampleBasicIntro extends Activity {
         return new Observer<String>() {
             @Override
             public void onSubscribe(Disposable d) {
-                Log.v(TAG," onSubscribed");
+                Log.v(TAG, " onSubscribed");
             }
 
             @Override
             public void onNext(String s) {
-                Log.v(TAG," onNext : "+s);
+                Log.v(TAG, " onNext : " + s);
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.v(TAG," onError "+e.getMessage());
+                Log.v(TAG, " onError " + e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                Log.v(TAG," onComplete All Items Are emitted");
+                Log.v(TAG, " onComplete All Items Are emitted");
             }
         };
     }
