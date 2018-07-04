@@ -8,12 +8,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -87,6 +90,26 @@ public class RxDbHelper extends SQLiteOpenHelper {
     }
 
     public Observable<List<Footballer>> getRxFootballer(){
-        return makeObservable(getPlayers()).subscribeOn(Schedulers.computation());
+        return makeObservable(getPlayers()).subscribeOn(Schedulers.computation())
+                .map(new Function<List<Footballer>, List<Footballer>>() {
+                    @Override
+                    public List<Footballer> apply(List<Footballer> footballers) throws Exception {
+                        Collections.sort(footballers,new FootballerComparator());
+                        return footballers;
+                    }
+                });
+    }
+
+    public  class FootballerComparator implements Comparator<Footballer> {
+        @Override
+        public int compare(Footballer participant1, Footballer participant2) {
+            //Ascending Order
+//            int result = participant1.getName().compareTo(participant2.getName());
+            //Descending Order
+            String str2 = participant2.getName().toUpperCase();
+            String str1 = participant1.getName().toUpperCase();
+            int result = str2.compareTo(str1);
+            return result;
+        }
     }
 }

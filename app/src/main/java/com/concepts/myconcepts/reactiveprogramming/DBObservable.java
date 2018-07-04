@@ -76,10 +76,13 @@ public class DBObservable extends Activity {
             rxDbHelper.getRxFootballer()
                     .observeOn(Schedulers.io())
                     .subscribeOn(AndroidSchedulers.mainThread())
+                    .take(2)
                     .subscribe(getObserverFootballer());
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+        Log.v(TAGSINGLE," Thread : "+Thread.currentThread().getName());
     }
 
 
@@ -94,7 +97,9 @@ public class DBObservable extends Activity {
             @Override
             public void onNext(List<Footballer> footballers) {
                 for(Footballer footballer:footballers){
-//                    Log.v(TAGSINGLE," onNext");
+//                    if(footballer.getName().startsWith("M")){
+//                        Log.v(TAGSINGLE," Name  : "+footballer.getName()+" Country  : "+footballer.getCountry());
+//                    }
                     Log.v(TAGSINGLE," Name  : "+footballer.getName()+" Country  : "+footballer.getCountry());
                 }
             }

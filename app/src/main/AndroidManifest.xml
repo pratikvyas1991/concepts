@@ -36,6 +36,7 @@
         </activity>
 
 
+        <activity android:name=".reactiveprogramming.MathObservable"/>
         <activity android:name=".reactiveprogramming.SingleObservable"/>
 
         <activity android:name=".ds.TestDs"/>
