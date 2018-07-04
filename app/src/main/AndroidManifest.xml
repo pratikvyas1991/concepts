@@ -26,7 +26,7 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_api_key" />
 
-        <activity android:name=".reactiveprogramming.DBObservable">
+        <activity android:name=".collections.set.SetExample">
 
         <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +35,11 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".collections.set.HashsetExample"/>
+
+        <activity android:name=".collections.set.LinkedHashsetExample"/>
+
+        <activity android:name=".reactiveprogramming.DBObservable"/>
 
         <activity android:name=".reactiveprogramming.MathObservable"/>
         <activity android:name=".reactiveprogramming.SingleObservable"/>
