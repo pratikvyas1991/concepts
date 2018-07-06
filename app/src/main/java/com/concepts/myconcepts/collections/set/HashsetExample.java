@@ -11,8 +11,6 @@ import com.concepts.myconcepts.R;
 import com.concepts.myconcepts.collections.FootballerSimple;
 
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by tasol on 4/7/18.
@@ -50,18 +48,15 @@ public class HashsetExample extends Activity {
             @Override
             public void onClick(View v) {
                 // First Method
-
                 for(FootballerSimple row : footBllSet){
                     Log.v(TAGHASH,"Set Name : "+row.getName());
                 }
-
                 //Second Method
 //                Iterator<String> it = set.iterator();
 //                if(set.contains("Ramos"))
 //                while (it.hasNext()){
 //                    Log.v(TAGHASH," Name : "+it.next());
 //                }
-
             }
         });
     }

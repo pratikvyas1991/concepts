@@ -1,7 +1,6 @@
 package com.concepts.myconcepts.collections.set;
 
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.TreeSet;
 
@@ -33,6 +32,7 @@ public class FootballerSet {
 
     @Override
     public boolean equals(Object obj) {
+        // here we are comparing name any field can be compared ,generally a unique column is subjected to this
         FootballerSet set = (FootballerSet) obj;
         boolean retVal = false;
         if (name.compareTo(set.getName()) == 0) {
@@ -68,23 +68,23 @@ public class FootballerSet {
         this.goals = goals;
     }
 
-    public static TreeSet<FootballerSet> getSortedNames(LinkedHashSet<FootballerSet> hashSet,String order) {
+    public static TreeSet<FootballerSet> getSortedNames(LinkedHashSet<FootballerSet> hashSet, String order) {
         // Method to get sorted Name based on the below classes SortedNameDESC and SortedNameASC
         TreeSet<FootballerSet> tSet;
-        if(order.equalsIgnoreCase("desc")){
+        if (order.equalsIgnoreCase("desc")) {
             tSet = new TreeSet<>(new SortByNameDESC());
-        }else {
+        } else {
             tSet = new TreeSet<>(new SortNameASC());
         }
         tSet.addAll(hashSet);
         return tSet;
     }
 
-    public static TreeSet<FootballerSet> getSortedGoals(LinkedHashSet<FootballerSet> hashSet,String order){
+    public static TreeSet<FootballerSet> getSortedGoals(LinkedHashSet<FootballerSet> hashSet, String order) {
         TreeSet<FootballerSet> tSet;
-        if(order.equalsIgnoreCase("desc")){
+        if (order.equalsIgnoreCase("desc")) {
             tSet = new TreeSet<>(new SortGoalDESC());
-        }else {
+        } else {
             tSet = new TreeSet<>(new SortByGoalASC());
         }
         tSet.addAll(hashSet);
@@ -118,7 +118,7 @@ public class FootballerSet {
         }
     }
 
-    public static class SortGoalDESC implements Comparator<FootballerSet>{
+    public static class SortGoalDESC implements Comparator<FootballerSet> {
 
         @Override
         public int compare(FootballerSet o1, FootballerSet o2) {
@@ -127,10 +127,8 @@ public class FootballerSet {
         }
     }
 
-    public static <T> T getFirstElement(final Iterable<T> element){
+    public static <T> T getFirstElement(final Iterable<T> element) {
         // This will yield the first element of an Iterator
         return element.iterator().next();
     }
-
-
 }
